@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <RelativeLayout
+        android:layout_width="360dp"
+        android:layout_height="300dp">
+
+        <TextView
+            android:id="@+id/textInput"
+            android:layout_width="170dp"
+            android:layout_height="103dp"
+            android:layout_below="@+id/sourceUnit"
+            android:layout_marginStart="4dp"
+            android:textSize="24sp"
+            android:text=""
+            android:layout_marginLeft="4dp" />
+
+        <TextView
+            android:id="@+id/textOutput"
+            android:layout_width="170dp"
+            android:layout_height="103dp"
+            android:layout_below="@+id/destUnit"
+            android:layout_toRightOf="@id/textInput"
+            android:layout_toEndOf="@id/textInput"
+            android:layout_marginStart="4dp"
+            android:textSize="24sp"
+            android:text=""
+            android:layout_marginLeft="4dp" />
+
+        <Spinner
+            android:id="@+id/category"
+            android:layout_width="344dp"
+            android:layout_height="103dp" />
+
+        <Spinner
+            android:id="@+id/sourceUnit"
+            android:layout_width="170dp"
+            android:layout_height="103dp"
+            android:layout_below="@+id/category"  />
+
+        <Spinner
+            android:id="@+id/destUnit"
+            android:layout_width="170dp"
+            android:layout_height="103dp"
+            android:layout_toRightOf="@id/sourceUnit"
+            android:layout_toEndOf="@id/sourceUnit"
+            android:layout_below="@+id/category"
+            android:layout_marginStart="4dp"
+            android:layout_marginLeft="4dp" />
+
+    </RelativeLayout>
+
+</layout>
