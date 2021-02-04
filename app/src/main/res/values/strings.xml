@@ -1,12 +1,21 @@
 <resources>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="app_name">Tabata timer</string>
     <string name="settings">Settings</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title">Title</string>
     <string name="color">Color</string>
     <string name="preparation_time">Preparation time</string>
     <string name="work_time">Work time</string>
     <string name="rest_time">Rest time</string>
     <string name="cycles_number">Number of cycles</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="cooldown">Cooldown time</string>
+    <string-array name="sequence_colors_names">
+        <item name="red">Red</item>
+        <item name="blue">Blue</item>
+        <item name="yellow">Yellow</item>
+        <item name="green">Green</item>
+    </string-array>
 </resources>
