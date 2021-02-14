@@ -19,7 +19,8 @@ data class Sequence(@ColumnInfo(name = "title") var title: String,
     @PrimaryKey
     @ColumnInfo(name = "id")
     var id = idCounter
-    //var id = UUID.randomUUID()
+    //var currentPhase
+    //var currentSecond = 0
 
     init {
         idCounter += 1
@@ -28,4 +29,6 @@ data class Sequence(@ColumnInfo(name = "title") var title: String,
     companion object {
         var idCounter : Int = 1
     }
+
+
 }

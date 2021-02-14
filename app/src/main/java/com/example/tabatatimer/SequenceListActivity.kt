@@ -4,10 +4,7 @@ import android.content.Intent
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.MenuItem
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Button
 import android.widget.TableLayout
 import android.widget.TableRow
@@ -60,6 +57,12 @@ class SequenceListActivity : AppCompatActivity() {
         }
     }
 
+    fun onNameClicked(view: View) {
+        val intent = Intent(this, TimerPageActivity::class.java)
+        intent.putExtra("Sequence", view.tag as Sequence?)
+        startActivity(intent)
+    }
+
     fun loadTable(sequences: List<Sequence>) {
         findViewById<TableLayout>(R.id.sequenceList).removeAllViews()
         for (i in sequences) {
@@ -70,9 +73,10 @@ class SequenceListActivity : AppCompatActivity() {
     fun createRow(sequence: Sequence) {
         val row = android.view.LayoutInflater.from(this@SequenceListActivity).inflate(R.layout.sequence_list_row, null) as TableRow
 
-        val name = sequence.title
-        //val name = "123456789"
-        row.findViewById<TextView>(R.id.sequenceName).setText(name)
+        val name = row.findViewById<TextView>(R.id.sequenceName)
+        name.tag = sequence
+        name.text = sequence.title
+        name.setOnClickListener { view -> onNameClicked(view) }
 
         val color = ColorUtil.getColorById(sequence.color)
         row.findViewById<TextView>(R.id.sequenceName).setTextColor(getColor(color))
@@ -85,5 +89,14 @@ class SequenceListActivity : AppCompatActivity() {
         val btnDelete = row.findViewById<Button>(R.id.button3)
         btnDelete.tag = sequence
         btnDelete.setOnClickListener { view -> onDeleteClicked(view) }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
     }
 }
