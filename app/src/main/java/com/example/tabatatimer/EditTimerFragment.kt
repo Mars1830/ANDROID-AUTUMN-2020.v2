@@ -11,6 +11,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.tabatatimer.databinding.FragmentEditTimerBinding
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -22,23 +25,25 @@ private const val ARG_PARAM2 = "param2"
  * Use the [EditTimerFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class EditTimerFragment(var thisSequence: Sequence? = null) : Fragment() {
+class EditTimerFragment() : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
 
     private lateinit var viewModel: EditTimerViewModel
-    private lateinit var activityCallback: MainActivity
+    private lateinit var activityCallback: EditTimerActivity
     private lateinit var binding: FragmentEditTimerBinding
+    private var thisSequence: Sequence? = null
 
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        activityCallback = context as MainActivity
+        activityCallback = context as EditTimerActivity
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         arguments?.let {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
@@ -92,20 +97,34 @@ class EditTimerFragment(var thisSequence: Sequence? = null) : Fragment() {
 
             val newSequence = Sequence(title, color, prepTime, workTime, restTime, cyclesNumber, cooldownTime)
             //val newSequence = Sequence("title", 1, 1, 1, 1, 1, 1)
-            if (thisSequence == null) {
-                viewModel.createSequence(newSequence)
+            GlobalScope.launch(Dispatchers.IO) {
+                if (thisSequence == null) {
+                    viewModel.createSequence(newSequence)
+                }
+                else {
+                     viewModel.updateSequence(thisSequence!!, newSequence)
+                }
             }
-            else {
-                viewModel.updateSequence(thisSequence!!, newSequence)
-            }
+            activityCallback.onBackPressed()
         }
         catch (ex : NumberFormatException) {
             Toast.makeText(activityCallback, "Please enter correct data", Toast.LENGTH_LONG).show()
         }
     }
 
-    private fun cancelBtnClicked() {
+    fun setSequence(sequence: Sequence) {
+        thisSequence = sequence
+        binding.editTitle.setText(sequence.title)
+        binding.spinnerColor.setSelection(sequence.color)
+        binding.editPrepTime.setText(sequence.prepare.toString())
+        binding.editWorkTime.setText(sequence.work.toString())
+        binding.editRestTime.setText(sequence.rest.toString())
+        binding.editCyclesNumber.setText(sequence.cycles.toString())
+        binding.editCooldownTime.setText(sequence.cooldown.toString())
+    }
 
+    private fun cancelBtnClicked() {
+        activityCallback.onBackPressed()
     }
 
     companion object {

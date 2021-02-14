@@ -1,5 +1,6 @@
 package com.example.tabatatimer
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 
 import com.example.tabatatimer.Sequence
@@ -7,20 +8,23 @@ import com.example.tabatatimer.Sequence
 @Dao
 interface SequenceDAO {
     @Query("SELECT * FROM sequence")
-    fun getAll(): List<Sequence>
+    suspend fun getAll(): List<Sequence>
+
+    @get:Query("SELECT * FROM sequence")
+    val allSequences: LiveData<List<Sequence>>
 
     @Query("SELECT * FROM sequence WHERE id LIKE :id")
-    fun findById(id: Int): Sequence
+    suspend fun findById(id: Int): Sequence
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(vararg sequences: Sequence)
+    suspend fun insertAll(vararg sequences: Sequence)
 
     @Update
-    fun updateSequences(vararg sequences: Sequence)
+    suspend fun updateSequences(vararg sequences: Sequence)
 
     @Delete
-    fun delete(sequence: Sequence)
+    suspend fun delete(sequence: Sequence)
 
     @Query("DELETE FROM sequence")
-    fun deleteAll()
+    suspend fun deleteAll()
 }

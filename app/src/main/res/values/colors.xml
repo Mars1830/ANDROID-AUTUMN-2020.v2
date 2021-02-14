@@ -8,10 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!--array name="sequence_colors">
-        <color name="red">#F44336</color>
-        <color name="blue">#3F51B5</color>
-        <color name="yellow">#FFEB3B</color>
-        <color name="green">#4CAF50</color>
-    </array-->
+
+    <color name="s_red">#F44336</color>
+    <color name="s_blue">#3F51B5</color>
+    <color name="s_yellow">#FFEB3B</color>
+    <color name="s_green">#4CAF50</color>
 </resources>
