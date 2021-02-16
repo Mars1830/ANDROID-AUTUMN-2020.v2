@@ -88,7 +88,7 @@ class TimerPageActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
-        stopService(Intent(this, TimerService::class.java))
+        //stopService(Intent(this, TimerService::class.java))
         super.onDestroy()
     }
 }

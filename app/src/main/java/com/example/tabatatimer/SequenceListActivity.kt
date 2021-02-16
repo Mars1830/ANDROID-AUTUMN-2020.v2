@@ -12,6 +12,7 @@ import android.widget.TextView
 import androidx.appcompat.app.ActionBar
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -25,6 +26,7 @@ class SequenceListActivity : AppCompatActivity() {
     private lateinit var viewModel: ListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        AppCompatDelegate.MODE_NIGHT_YES
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sequence_list)
         setSupportActionBar(findViewById(R.id.toolbar))
@@ -97,6 +99,8 @@ class SequenceListActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
         return super.onOptionsItemSelected(item)
     }
 }

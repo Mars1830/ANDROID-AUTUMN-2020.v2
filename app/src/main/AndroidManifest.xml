@@ -11,8 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TabataTimer">
-        <service
-            android:name=".TimerService"></service>
+        <activity android:name=".SettingsActivity"></activity>
+
+        <service android:name=".TimerService" />
 
         <activity
             android:name=".TimerPageActivity"

@@ -18,10 +18,13 @@
         <item name="yellow">Yellow</item>
         <item name="green">Green</item>
     </string-array>
-    <string name="title_activity_sequence_list">SequenceListActivity</string>
+    <string name="title_activity_sequence_list">Tabata timer</string>
 
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="back"><![CDATA[<<]]></string>
     <string name="forward"><![CDATA[>>]]></string>
+    <string name="play">Play</string>
+    <string name="name">Name</string>
+    <string name="dark_theme">Dark theme</string>
 </resources>
