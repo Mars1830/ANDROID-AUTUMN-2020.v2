@@ -1,5 +1,6 @@
 package com.example.tabatatimer
 
+import android.util.Log
 import java.io.Serializable
 
 class SequenceHandler(sequence: Sequence) : Serializable{
@@ -34,6 +35,7 @@ class SequenceHandler(sequence: Sequence) : Serializable{
     }
 
     fun moveToNextPhase() : Boolean {
+        Log.i("APPTIMER", "NEXT_PHASE: " + currentPhase.toString())
         if (currentPhase < phases.size - 1) {
             currentPhase++
             phases[currentPhase] = phasesOriginal[currentPhase]
@@ -43,6 +45,7 @@ class SequenceHandler(sequence: Sequence) : Serializable{
     }
 
     fun moveToPrevPhase() : Boolean {
+        Log.i("APPTIMER", "PREV_PHASE: " + currentPhase.toString())
         if (currentPhase > 0) {
             currentPhase--
             phases[currentPhase] = phasesOriginal[currentPhase]

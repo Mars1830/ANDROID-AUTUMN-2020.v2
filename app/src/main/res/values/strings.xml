@@ -18,10 +18,32 @@
         <item name="yellow">Yellow</item>
         <item name="green">Green</item>
     </string-array>
-    <string name="title_activity_sequence_list">SequenceListActivity</string>
 
+    <string-array name="font_size">
+        <item name="standard">Standard</item>
+        <item name="large">Large</item>
+    </string-array>
+    <string name="standard">Standard</string>
+    <string name="large">Large</string>
+
+    <string-array name="language">
+        <item name="en">English</item>
+        <item name="ru">Russian</item>
+    </string-array>
+    <string name="en">English</string>
+    <string name="ru">Russian</string>
+
+    <string name="title_activity_sequence_list">Tabata timer</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
     <string name="back"><![CDATA[<<]]></string>
     <string name="forward"><![CDATA[>>]]></string>
+    <string name="play">Play</string>
+    <string name="pause">Pause</string>
+    <string name="name">Name</string>
+    <string name="dark_theme">Dark mode</string>
+    <string name="light_theme">Light mode</string>
+    <string name="font_size">Font size</string>
+    <string name="language">Language</string>
+    <string name="clear_all_data">Clear all data</string>
 </resources>

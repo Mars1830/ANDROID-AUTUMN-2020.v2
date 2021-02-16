@@ -1,0 +1,49 @@
+<resources>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="app_name">Табата таймер</string>
+    <string name="settings">Настройки</string>
+    <string name="title">Название</string>
+    <string name="color">Цвет</string>
+    <string name="preparation_time">Подготовка</string>
+    <string name="work_time">Воркаут</string>
+    <string name="rest_time">Отдых</string>
+    <string name="cycles_number">Повторения</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Отмена</string>
+    <string name="cooldown">Восстановление</string>
+    <string-array name="sequence_colors_names">
+        <item name="red">Красный</item>
+        <item name="blue">Синий</item>
+        <item name="yellow">Желтый</item>
+        <item name="green">Зеленый</item>
+    </string-array>
+
+    <string-array name="font_size">
+        <item name="standard">Стандартный</item>
+        <item name="large">Большой</item>
+    </string-array>
+    <string name="standard">Стандартный</string>
+    <string name="large">Большой</string>
+
+    <string-array name="language">
+        <item name="en">Английский</item>
+        <item name="ru">Русский</item>
+    </string-array>
+    <string name="en">Английский</string>
+    <string name="ru">Русский</string>
+
+    <string name="title_activity_sequence_list">Табата таймер</string>
+    <string name="edit">Изменить</string>
+    <string name="delete">Удалить</string>
+    <string name="back"><![CDATA[<<]]></string>
+    <string name="forward"><![CDATA[>>]]></string>
+    <string name="play">Запуск</string>
+    <string name="pause">Пауза</string>
+    <string name="name">Название</string>
+    <string name="dark_theme">Тёмная тема</string>
+    <string name="light_theme">Светлая тема</string>
+    <string name="font_size">Размер шрифта</string>
+    <string name="language">Язык</string>
+    <string name="clear_all_data">Очистить все данные</string>
+</resources>
