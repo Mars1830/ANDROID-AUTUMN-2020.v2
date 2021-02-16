@@ -21,12 +21,12 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class SequenceListActivity : AppCompatActivity() {
+class SequenceListActivity : BaseActivity() {
 
     private lateinit var viewModel: ListViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        AppCompatDelegate.MODE_NIGHT_YES
+        setTheme(R.style.Theme_TabataTimer_NoActionBar)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sequence_list)
         setSupportActionBar(findViewById(R.id.toolbar))
@@ -34,10 +34,14 @@ class SequenceListActivity : AppCompatActivity() {
         findViewById<FloatingActionButton>(R.id.fab).setOnClickListener { view -> onAddClicked(view) }
         viewModel = ViewModelProvider(this).get(ListViewModel::class.java)
         viewModel.sequenceList.observe(this,
-            Observer { sequences: List<Sequence> ->
-                loadTable(sequences)
-            }
+                Observer { sequences: List<Sequence> ->
+                    loadTable(sequences)
+                }
         )
+
+        if (prefs.getBoolean("dark_mode", false)) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+        }
     }
 
     fun onAddClicked(view: View) {
@@ -101,6 +105,7 @@ class SequenceListActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val intent = Intent(this, SettingsActivity::class.java)
         startActivity(intent)
+        finish()
         return super.onOptionsItemSelected(item)
     }
 }

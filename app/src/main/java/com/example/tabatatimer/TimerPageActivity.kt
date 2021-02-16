@@ -13,7 +13,7 @@ import com.example.tabatatimer.databinding.ActivityTimerPageBinding
 import kotlinx.android.synthetic.main.content_timer_page.*
 import kotlinx.android.synthetic.main.fragment_edit_timer.view.*
 
-class TimerPageActivity : AppCompatActivity() {
+class TimerPageActivity : BaseActivity() {
 
     private lateinit var binding: ActivityTimerPageBinding
     private var thisSequence: Sequence? = null
@@ -51,8 +51,8 @@ class TimerPageActivity : AppCompatActivity() {
     }
 
     private fun playBtnClicked(view: View) {
-        if ((view as Button).text == "Play") {
-            view.text = "Pause"
+        if ((view as Button).text == getText(R.string.play)) {
+            view.setText(R.string.pause)
 
             startForegroundService(
                 Intent(this, TimerService::class.java).apply {
@@ -61,7 +61,7 @@ class TimerPageActivity : AppCompatActivity() {
                 })
         }
         else {
-            view.text = "Play"
+            view.setText(R.string.play)
 
             startForegroundService(
                 Intent(this, TimerService::class.java).apply {

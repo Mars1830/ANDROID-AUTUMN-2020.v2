@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TabataTimer">
-        <activity android:name=".SettingsActivity"></activity>
+        <activity android:name=".SettingsActivity" />
 
         <service android:name=".TimerService" />
 
@@ -21,7 +21,7 @@
         <activity
             android:name=".SequenceListActivity"
             android:label="@string/title_activity_sequence_list"
-            android:theme="@style/Theme.TabataTimer.NoActionBar">
+            android:theme="@style/Theme.TabataTimer.Launcher">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
