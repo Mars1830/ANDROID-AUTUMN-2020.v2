@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Converter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="categories">
+        <item>Distance</item>
+        <item>Temperature</item>
+        <item>Weight</item>
+    </string-array>
+    <string-array name="distanceUnits">
+        <item>Millimetres</item>
+        <item>Metres</item>
+        <item>Kilometres</item>
+    </string-array>
+    <string-array name="tempUnits">
+        <item>Celsius</item>
+        <item>Fahrenheit</item>
+        <item>Kelvin</item>
+    </string-array>
+    <string-array name="weightUnits">
+        <item>Grams</item>
+        <item>Kilograms</item>
+        <item>Pounds</item>
+    </string-array>
+</resources>
