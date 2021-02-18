@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tabatatimer">
-
-    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    package="com.example.game">
 
     <application
         android:allowBackup="true"
@@ -10,24 +8,33 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TabataTimer">
-        <service
-            android:name=".TimerService"></service>
-
+        android:theme="@style/Theme.GameForTwo">
         <activity
-            android:name=".TimerPageActivity"
-            android:theme="@style/Theme.TabataTimer.NoActionBar" />
+            android:name=".AvatarListActivity"
+            android:label="@string/title_activity_avatar_list"
+            android:theme="@style/Theme.GameForTwo.NoActionBar"></activity>
         <activity
-            android:name=".SequenceListActivity"
-            android:label="@string/title_activity_sequence_list"
-            android:theme="@style/Theme.TabataTimer.NoActionBar">
+            android:name=".CreateAccount"
+            android:label="@string/title_activity_create_account"
+            android:theme="@style/Theme.GameForTwo.NoActionBar" />
+        <activity
+            android:name=".StatsActivity"
+            android:label="@string/title_activity_stats" />
+        <activity
+            android:name=".GameActivity"
+            android:label="@string/title_activity_game"
+            android:theme="@style/Theme.GameForTwo.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:theme="@style/Theme.GameForTwo.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".EditTimerActivity" />
+        <activity android:name=".StartActivity" />
     </application>
 
 </manifest>
