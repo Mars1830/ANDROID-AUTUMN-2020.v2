@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/row_avatar">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/img_avataricon"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="start"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/noavatar" />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</TableRow>
